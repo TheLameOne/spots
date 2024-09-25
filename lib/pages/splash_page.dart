@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:spots/pages/auth_pages/auth_page.dart';
+import 'package:spots/pages/auth_pages/login_page.dart';
 import 'package:spots/pages/home_page.dart';
 import 'package:spots/pages/maps_page.dart';
 import 'package:spots/pages/profile_page.dart';
@@ -13,6 +16,36 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   int _selectedIndex = 0;
+  bool _isAuthenticated = false;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkAuthentication();
+  }
+
+  // Function to check if the user is authenticated
+  void _checkAuthentication() async {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    // Simulate loading delay for splash screen experience
+    await Future.delayed(Duration(seconds: 2));
+
+    if (user != null) {
+      // If the user is authenticated, show the main app (with navigation bar)
+      setState(() {
+        _isAuthenticated = true;
+        _isLoading = false;
+      });
+    } else {
+      // If not authenticated, navigate to the authentication page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => AuthPage()),
+      );
+    }
+  }
 
   _getBody() {
     switch (_selectedIndex) {
@@ -85,6 +118,13 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(), // Loading spinner
+        ),
+      );
+    }
     return Scaffold(
       bottomNavigationBar: _getBottomBar(),
       backgroundColor: Colors.white,

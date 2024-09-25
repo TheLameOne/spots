@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:spots/pages/auth_pages/auth_page.dart';
+import 'package:spots/pages/auth_pages/login_page.dart';
 import 'package:spots/pages/home_page.dart';
 import 'package:spots/pages/item_page.dart';
 import 'package:spots/pages/maps_page.dart';
@@ -11,7 +14,7 @@ import 'package:spots/theme/theme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp();
   SystemChrome.setSystemUIChangeCallback((systemOverlaysAreVisible) async {
     await Future.delayed(const Duration(seconds: 1));
     SystemChrome.restoreSystemUIOverlays();
@@ -46,13 +49,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Spots',
-      home: SplashPage(),
+      home: LoginPage(),
+      // initialRoute: '/splashpage',
       theme: Provider.of<ThemeProvider>(context).themeData,
       routes: {
+        // '/loginpage': (context) => const LoginPage(),
+        '/authpage': (context) => AuthPage(),
         '/homepage': (context) => const HomePage(),
         '/mapspage': (context) => const MapsPage(),
         '/profilepage': (context) => const ProfilePage(),
         '/searchpage': (context) => const SearchPage(),
+        '/splashpage': (context) => SplashPage(),
         // '/itempage': (context) => const ItemPage(),
 
         // '/currentschedulepage': (context) => const CurrentSchedulePage(),
