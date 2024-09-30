@@ -2,12 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:spots/pages/auth_pages/auth_page.dart';
-import 'package:spots/pages/auth_pages/login_page.dart';
-import 'package:spots/pages/home_page.dart';
-import 'package:spots/pages/maps_page.dart';
-import 'package:spots/pages/profile_page.dart';
-import 'package:spots/pages/search_page.dart';
+import 'package:spots/features/pages/auth_pages/auth_page.dart';
+import 'package:spots/features/pages/home_page.dart';
+import 'package:spots/features/pages/maps_page.dart';
+import 'package:spots/features/pages/profile_page.dart';
+import 'package:spots/features/pages/search_page.dart';
 
 class SplashPage extends StatefulWidget {
   @override

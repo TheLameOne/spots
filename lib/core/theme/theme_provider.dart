@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:spots/theme/blue_dark.dart';
-import 'package:spots/theme/blue_light.dart';
-import 'package:spots/theme/dark.dart';
-import 'package:spots/theme/green_dark.dart';
-import 'package:spots/theme/green_light.dart';
-import 'package:spots/theme/light.dart';
-import 'package:spots/theme/orange_dark.dart';
-import 'package:spots/theme/orange_light.dart';
-import 'package:spots/theme/yellow_dark.dart';
-import 'package:spots/theme/yellow_light.dart';
+import 'package:spots/core/theme/blue_dark.dart';
+import 'package:spots/core/theme/blue_light.dart';
+import 'package:spots/core/theme/dark.dart';
+import 'package:spots/core/theme/green_dark.dart';
+import 'package:spots/core/theme/green_light.dart';
+import 'package:spots/core/theme/light.dart';
+import 'package:spots/core/theme/orange_dark.dart';
+import 'package:spots/core/theme/orange_light.dart';
+import 'package:spots/core/theme/yellow_dark.dart';
+import 'package:spots/core/theme/yellow_light.dart';
 
 class ThemeProvider extends ChangeNotifier {
   // Store the available themes in lists

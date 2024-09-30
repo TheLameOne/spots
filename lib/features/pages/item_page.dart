@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spots/pages/add_places.dart';
+import 'package:spots/features/pages/add_places.dart';
 
 class ItemPage extends StatefulWidget {
   String itemname;

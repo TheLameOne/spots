@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:spots/pages/item_page.dart';
+import 'package:spots/features/pages/item_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

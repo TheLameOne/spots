@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spots/components/my_textfield.dart';
-import 'package:spots/components/square_tile.dart';
+import 'package:spots/features/components/my_textfield.dart';
+import 'package:spots/features/components/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
